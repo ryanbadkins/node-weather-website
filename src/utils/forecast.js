@@ -9,7 +9,7 @@ const forecast = (lat, lon, callback)=>{
         }else if(body.error === 0){
             callback('unable to find longitude/latitude, try another search',undefined)
         }else{
-            callback(undefined,`its currently ${body.currently.temperature} degrees out. there's a ${body.currently.precipProbability}% chance of precipitation.`)
+            callback(undefined,`its currently ${body.currently.temperature} degrees out. there's a ${body.currently.precipProbability}% chance of precipitation. ${body.daily.summary}`)
         }
     })
 }
